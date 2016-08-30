@@ -1,0 +1,458 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Scoop de pool</title>
+
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<!--[if IE 9]> <link href="css/ie9.css" rel="stylesheet" type="text/css"> <![endif]-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=1;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<!--<script src="lib/metaJs.js" type="text/javascript"></script>-->
+<!--<script src="js/jquery-ui.js" type="text/javascript"></script>-->
+<script src="js/mod.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+
+<script src="lib/jquery.gsap.js" type="text/javascript"></script>
+<script src="lib/TweenMax.js" type="text/javascript"></script>
+
+<script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
+
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/custome.js" type="text/javascript"></script>
+<script src="js/bxsliderContent.js" type="text/javascript"></script>
+
+<script src="lib/material.min.js"></script>
+
+<script type="text/javascript" src="lib/utils.ck-1.0.js"></script>
+
+
+
+
+</head>
+
+<body>
+<div id="log">log massage<br></div>
+<div class="wrapperPreload" style="display: none;">
+	<div class="wrapperFlip" >
+    	<div class="rotateLogo">
+            <div class="logoRotation"><img src="images/logo-loading.png" alt="Scoop de pool"></div>
+        </div>
+        <div class="ie9Loading">Loading</div>
+    </div>
+    <div class="preloadBg"></div>
+</div>
+
+<div class="wrapperCookies" style="display: none;">
+    By continuing to use our site you agree to our privacy and cookies policies.
+    <div class="cookiesClose"><a href="#">X</a></div>
+</div>
+
+<header>
+    <div class="btnMobMenu">
+        <a href="#">
+            <div class="wrapperHamburger">
+                <div class="hamburger lineA"></div>
+                <div class="hamburger lineB"></div>
+                <div class="hamburger lineC"></div>
+            </div>
+        </a>
+    </div>
+    <div class="wrapperMobNavigation">
+        <div class="mobNavigation">
+            <ul>
+                <li><a href="index.html"><img src="images/menu_logo.png"></a></li>
+                <li><a href="dashboard.html">LOGIN / REGSITER</a></li>
+                <li><a href="" class="selected">PRODUCT</a></li>
+                <li><a href="how.html">HOW TO SCOOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="support.html">CUSTOMER CARE</a></li>
+                <li><a href="#">GET THE APP</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="overlayMobileMenu"></div>
+
+    <div class="btnUserMenu">        
+        <a href="#">
+            <img src="images/icon-temp-bucket-w.png" alt="" /> 2
+        </a>
+    </div>
+
+    <div class="wrapperUserNav">
+        <section>
+            <div class="userNav left">
+                <ul>
+                    <li class="txtLink"><a href="##"><div class="icon"></div>GET THE APP</a></li>
+                </ul>
+            </div>
+            <div class="userNav right">
+                <ul>
+                    <li class="txtLink"><a href="support.html">CUSTOMER CARE</a></li>
+                    <li class="txtLink"><a href="dashboard.html">LOGIN</a></li>
+                    <li class="txtLink"><a href="register.html">REGISTER</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+    <div class="wrapperHeader">
+        <section>
+            <div class="wrapperLogo"><a href="index.html"><img src="images/logo.png" alt="Scoop de pool" /></a></div>
+            <div class="wrapperHeaderAction">
+                <div class="wrapperMainSearch">
+                    <div class="mainSearch">
+                        <input type="text" class="defaultHolder" title="Search...">
+                        <button class="btnBlue"><img src="images/icon-temp-bucket-w.png" alt="" />0</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <nav>
+        <section>
+            <ul>
+                <li class="txtLink"><a href="" class="selected">Products</a></li>
+                <li class="txtLink"><a href="how.html">How to scoop</a></li>
+                <li class="txtLink"><a href="about.html">About</a></li>
+            </ul>
+        </section>
+    </nav>
+</header>
+
+<div class="wrapperPopUp" style="display: none;">
+    <div class="popUpContent">
+        <section>
+            <div class="wrapperScooping" id="scoopingOnCall" style="display:none;">
+                <div class="btnBucketRemove"><a href="##"><span>X</span></a></div>
+                <!-- <h2>SCOOPING</h2> -->
+                <div class="scoopingItem">
+                    <div class="bucketContainer">
+                        <div class="bucketItem">
+                            <div class="bkDisplayPercent"><span class="numberColor">80% Complete</span></div>
+                            <img src="images/item1.jpg" alt="" />
+                        </div>
+                        <div class="bucketDescDetails">
+                            <p>
+                                Hisense 32” LED TV 32D50<br>
+                                AI1018-SS002-131-1<br>
+                                <span class="numberColor">RM 400.00</span>
+                            </p>
+                            <div class="btnGoldOnOff">
+                                <input type="checkbox" name="onoffswitch" class="btnGoldOnOffCheck" id="myonoffswitch" checked>
+                                <label class="btnGoldOnOffLabel" for="myonoffswitch"></label>
+                            </div>
+                        </div>
+                        <div class="bucketChances">x1</div>
+                        <div class="bucketCoinsUse">
+                            <div class="bkCoinContainer">
+                                <div class="coinsHolder silver"></div>
+                                <div class="coinsHolder gold"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scoopingCta">
+                        <div class="btnSpCancel">
+                            <button class="btnBlueSBorder">
+                                CANCEL
+                            </button>
+                        </div>
+                        <div class="btnSpNow">
+                            <button class="btnMainS">SCOOP NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- thanks pop up !-->
+            <div class="wrapperScooping" id="scoopingComplete">
+                <div class="btnBucketRemove"><a href="##"><span>X</span></a></div>
+                <!-- <h2>SCOOPING</h2> -->
+                <div class="scoopingItem scoopingDone">
+                    <h2>THANK YOU</h2>
+                    <strong>You scoop has successfully been made, wish you luck!</strong>
+                    <div class="scoopingCta">
+                        <div class="btnSpCancel">
+                            <button class="btnBlueSBorder">
+                                CLOSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div class="overlayBackground" style="display: none"></div>
+
+<div class="wrapper">
+    <div class="wrapperContent">
+        <!-- end of carousel !-->
+        <div class="wrapperBreadCrumb">
+            <section>
+                    <div class="breadCrumb"><a href="index.html">Home</a> >  Products </div>
+            </section>
+        </div>
+        <div class="wrapperFullProducts">
+            <section>
+                <div class="fullProducts">
+                    <h2>ALL PRODUCTS</h2>
+                    <div class="wrapperFilterArrange">
+                        <label>Arrange by:</label>
+                        <div class="filterArrangeSelection">
+                            <select>
+                                <option>New arrivals</option>
+                                <option>--Select--</option>
+                                <option>--Select--</option>
+                                <option>--Select--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="wrapperProducts">
+                        <div class="productsListing">
+                            <ul>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="product_inner.html">
+                                                    <div class="productExpired"><img src="images/icon-expired-soon.png" alt="" /></div>
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="bucket.html"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">80% Complete</div>
+                                                    <div class="productBarColor gradientLoading" style="width: 80%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                                <li class="col-1-4">
+                                        <div class="product">
+                                            <div class="productNameContainer">
+                                                <a href="##">
+                                                    <div class="productImg"><img src="images/item1.jpg" alt="" /></div>
+                                                </a>
+                                                <div class="productBar">
+                                                    <div class="productAddToBucket"><a href="##"><img src="images/icon-temp-bucket-b.png" alt="Add to Bucketlist" /></a></div>
+                                                    <div class="productBarDetails">45% Complete</div>
+                                                    <div class="productBarColor gradientLoading"></div>
+                                                </div>
+                                            </div>
+                                            <div class="productImgContainer">
+                                                <div class="productName">
+                                                    <p title="Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)">Philips HD2139 Preassure Cooker Electric 6.0L (Brown) ilips HD2139 Preassure Cooker Electric 6.0L (Brown)</p>
+                                                </div>
+                                                <div class="productPrice">RM 4, 000.00</div>
+                                                <div class="productListingCta">
+                                                    <button class="btnMainBorder">SCOOP IT</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="wrapperFooter">
+        <section>
+            <div class="col-1-2 left">
+                <div class="footerLogo"><img src="images/logo.png" alt="Scoop de pool" /></div>
+                <p>
+                    Scoopdepool is more than an online shopping website, is a combination of entertainment, shopping, fashion and trendy for new generation. We create fair & transparent entertaining shopping experience, we are here  to accomplish your all-time wishlist. Wish you scoop the pool.
+                </p>
+            </div>
+            <div class="col-1-2 right">
+                <div class="sitemap">
+                    <ul>
+                        <li>
+                            <h2>INFORMATION</h2>
+                            <ol>
+                                <li class="txtLink"><a href="##">Products</a></li>
+                                <li class="txtLink"><a href="##">How to scoop</a></li>
+                                <li class="txtLink"><a href="##">About</a></li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h2>SUPPORT</h2>
+                            <ol>
+                                <li>Customer care</li>
+                                <li>Privacy Policy</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h2>WE ACCEPT</h2>
+                            <div class="acccptedPayment"><img src="images/temp-card.jpg" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+    <div class="copyrightFooter">© scoopdepool 2016. ALL RIGHTS RESERVED.</div>
+</footer>
+
+</body>
+</html>
