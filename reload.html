@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Scoop de pool</title>
+
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<!--[if IE 9]> <link href="css/ie9.css" rel="stylesheet" type="text/css"> <![endif]-->
+<meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=1;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<!--<script src="lib/metaJs.js" type="text/javascript"></script>-->
+<!--<script src="js/jquery-ui.js" type="text/javascript"></script>-->
+<script src="js/mod.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+
+<script src="lib/jquery.gsap.js" type="text/javascript"></script>
+<script src="lib/TweenMax.js" type="text/javascript"></script>
+
+<script src="js/jquery.touchSwipe.min.js" type="text/javascript"></script>
+
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/custome.js" type="text/javascript"></script>
+<script src="js/bxsliderContent.js" type="text/javascript"></script>
+
+<script src="lib/material.min.js"></script>
+
+<script type="text/javascript" src="lib/utils.ck-1.0.js"></script>
+
+</head>
+
+<body>
+<div id="log">log massage<br></div>
+<div class="wrapperPreload" style="display: none;">
+	<div class="wrapperFlip" >
+    	<div class="rotateLogo">
+            <div class="logoRotation"><img src="images/logo-loading.png" alt="Scoop de pool"></div>
+        </div>
+        <div class="ie9Loading">Loading</div>
+    </div>
+    <div class="preloadBg"></div>
+</div>
+
+<div class="wrapperCookies" style="display: none;">
+    By continuing to use our site you agree to our privacy and cookies policies.
+    <div class="cookiesClose"><a href="#">X</a></div>
+</div>
+
+<header>
+    <div class="btnMobMenu">
+        <a href="#">
+            <div class="wrapperHamburger">
+                <div class="hamburger lineA"></div>
+                <div class="hamburger lineB"></div>
+                <div class="hamburger lineC"></div>
+            </div>
+        </a>
+    </div>
+    <div class="wrapperMobNavigation">
+        <div class="mobNavigation">
+            <ul>
+                <li><a href="index.html"><img src="images/menu_logo.png"></a></li>
+                <li><a href="dashboard.html">LOGIN / REGSITER</a></li>
+                <li><a href="product.html">PRODUCT</a></li>
+                <li><a href="how.html">HOW TO SCOOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="support.html">CUSTOMER CARE</a></li>
+                <li><a href="#">GET THE APP</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="overlayMobileMenu"></div>
+
+    <div class="btnUserMenu">        
+        <a href="#">
+            <img src="images/icon-temp-bucket-w.png" alt="" /> 2
+        </a>
+    </div>
+
+    <div class="wrapperUserNav">
+        <section>
+            <div class="userNav left">
+                <ul>
+                    <li class="txtLink"><a href="##"><div class="icon"></div>GET THE APP</a></li>
+                </ul>
+            </div>
+            <div class="userNav right">
+                <ul>
+                    <li class="txtLink"><a href="support.html">CUSTOMER CARE</a></li>
+                    <li class="txtLink"><a href="dashboard.html">MY SCOOP</a></li>
+                    <li class="txtLink"><a href="register.html">REGISTER</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+    <div class="wrapperHeader">
+        <section>
+            <div class="wrapperLogo"><a href="index.html"><img src="images/logo.png" alt="Scoop de pool" /></a></div>
+            <div class="wrapperHeaderAction">
+                <div class="wrapperMainSearch">
+                    <div class="mainSearch">
+                        <input type="text" class="defaultHolder" title="Search...">
+                        <button class="btnBlue"><img src="images/icon-temp-bucket-w.png" alt="" />0</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+    <nav>
+        <section>
+            <ul>
+                <li class="txtLink"><a href="product.html">Products</a></li>
+                <li class="txtLink"><a href="how.html">How to scoop</a></li>
+                <li class="txtLink"><a href="about.html">About</a></li>
+            </ul>
+        </section>
+    </nav>
+</header>
+
+<div class="wrapper">
+    <div class="wrapperContent">
+        <!-- end of carousel !-->
+        <div class="wrapperBreadCrumb">
+            <section>
+                    <div class="breadCrumb"><a href="index.html"> Home</a> >  <a href="dashboard.html"> My scoopboard</a> > Top up</div>
+            </section>
+        </div>
+
+        <div class="wrapperContentHeader">
+            <section>
+                <div class="contentHeader">
+                    <h2>Top up</h2>
+                    <hr>
+                </div>
+            </section>
+        </div>
+
+        <div class="wrapperReloadContent">
+            <section>
+                <div class="reloadAmount col-1-3 left">
+                    <h4>1. Please enter top up amount</h4>
+                    <div class="reloadPoints">
+                        <ul>
+                            <li class="preferAmount">
+                                <div class="reloadPreset">
+                                    <div class="presetNo">
+                                        <label>
+                                            <input type="text" placeholder="Prefer amount" name="preset" title="Prefer amount">
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="reloadPreset">
+                                    <div class="presetNo">
+                                        <label>
+                                            RM 25
+                                            <input type="radio" name="preset" id="r25" value="25">
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="reloadPreset">
+                                    <div class="presetNo">
+                                        <label>
+                                            RM 50
+                                            <input type="radio" name="preset" id="r50" value="50">
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="reloadPreset">
+                                    <div class="presetNo">
+                                        <label>
+                                            RM 100
+                                            <input type="radio" name="preset" id="r100" value="100">
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="reloadPreset">
+                                    <div class="presetNo">
+                                        <label>
+                                            RM 200
+                                            <input type="radio" name="preset" id="r200" value="200">
+                                        </label>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                        <div class="remainingPoints">
+                            <p>Current remaining: 123pts</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="reloadDetails col-2-3 left">
+                    <h4>2. Select your payement method</h4>
+                    <div class="reloadMethod">
+                        <ul>
+                            <li class="selected">
+                                <div class="paymentSelect" rel="forCc">
+                                    <label>
+                                        Credit Card
+                                        <input type="radio" name="paymentMethod" value="Credit card" checked="checked">
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="paymentSelect" rel="forOnline">
+                                    <label>
+                                        Online Banking
+                                        <input type="radio" name="paymentMethod" value="Online banking">
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="paymentSelect" rel="forOffline">
+                                    <label>
+                                        Offline bank transfer
+                                        <input type="radio" name="paymentMethod" value="Offline bank transfer">
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="paymentSelect" rel="forCard">
+                                    <label>
+                                        Card reload
+                                        <input type="radio" name="paymentMethod" value="Offline bank transfer">
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="reloadMethodLine"></div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="paymentMethodDetails">
+                        <div class="methodDetailsScroll">
+                            <div class="viaCreditCard" data-type="forCc">
+                                <div class="issueFrom">
+                                    <div class="ccIssueBank">
+                                        <select>
+                                            <option>-- Isuer Bank --</option>
+                                            <option>AEON</option>
+                                            <option>Affin Bank</option>
+                                            <option>Al Rajhi</option>
+                                            <option>Alliance Bank</option>
+                                            <option>Ambank</option>
+                                            <option>Bank Simpanan</option>
+                                            <option>BCB Community Bank</option>
+                                            <option>Bank Islam</option>
+                                            <option>BSN</option>
+                                            <option>CIMB</option>
+                                            <option>Citibank</option>
+                                            <option>EON Bank</option>
+                                            <option>Hong Leong Bank</option>
+                                            <option>HSBC Bank</option>
+                                            <option>Maybank</option>
+                                            <option>OCBC</option>
+                                            <option>Public Bank</option>
+                                            <option>RHB Bank</option>
+                                            <option>Standard Chartered Bank</option>
+                                            <option>Tune Money</option>
+                                            <option>United Overseas Bank</option>
+                                        </select>
+                                    </div>
+                                    <div class="ccIssueCountry">
+                                        <select>
+                                            <option>-- Isuer Country --</option>
+                                            <option>Malaysia</option>
+                                            <option>United Kingdom of Great Britain</option>
+                                        </select>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="form">
+                                    <input type="text" placeholder="Credit Card Number">
+                                </div>
+                                <div class="creditCardMainInfo">
+                                    <div class="ccName">
+                                        <div class="form">
+                                            <input type="text" placeholder="Name on card">
+                                        </div>
+                                    </div>
+                                    <div class="ccCcv">
+                                        <div class="ccvTooltips"></div>
+                                        <div class="form">
+                                            <input type="text" placeholder="CVC/CVV2">
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="creditCardExpired">
+                                    <div class="ccMonth">
+                                        <div class="form">
+                                            <select>
+                                                <option>-- Month --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="ccYear">
+                                        <div class="form">
+                                            <select>
+                                                <option>-- Year --</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="viaOnlineBanking" data-type="forOnline">
+                                <p>I would like to pay with</p>
+                                <div class="form">
+                                    <select>
+                                        <option>HongLeong Connect</option>
+                                        <option>Maybank2u</option>
+                                        <option>CIMB Clicks</option>
+                                        <option>RHB Now</option>
+                                        <option>AmOnline</option>
+                                        <option>FPX e-Payment Channel</option>
+                                        <option>PEx+ by HLBB</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="viaOfflineTransfer" data-type="forOffline">
+                                <p>*If you choose to pay via this option, please follow the instructions below and perform payment within 24 hours to avoid your order from being cancelled:</p>
+
+                                <p><strong>Step1:</strong>
+                                You can XXXX transfer via any bank (XXXX) or deposit the payment using a Cash Deposit Machine to the following bank account details:
+                                <div class="accountTable">
+                                    <ul>
+                                        <li>Account Name</li>
+                                        <li>Account No.</li>
+                                        <li>XXXXXXXXXXX</li>
+                                        <li>XXX-XX-XXXX-X</li>
+                                    </ul>
+                                    <div class="clear"></div>
+                                </div>
+                                </p>
+
+                                <p><strong>Step 2:</strong>
+                                When performing transfer of the payment, please remember to put your Scoop de pool Order Number in the Reference column.</p>
+
+                                <p><strong>Step 3:</strong>
+                                After payment made, please scan the payment receipt (in JPG, GIF, PNG or PDF format). If you do not have any scanning devices, alternatively you can use your smart phone to snap a photo of the receipt.</p>
+
+                                <p><strong>Step 4:</strong>
+                                Go to www.scoopdepool.com/my/cashdeposit to upload your payment receipt. Kindly be reminded file sizes must not exceed 2MB.</p>
+
+                                <p><strong>Step 5:</strong>
+                                Once the payment receipt received by Scoop de pool, it will take 1-2 working days for Scoop de pool to confirm your payment with the bank.</p>
+
+                                <p><strong>Step 6:</strong>
+                                Once the payment is confirmed, your order will be verified and fulfilled accordingly.</p>
+
+                                <p><strong>Important Note:</strong>
+                                - Scoop de pool will not process your order if the payment paid is less than your order amount.
+                                - If you have paid more than the order amount, Scoop de pool will not issue any refund.</p>
+                            </div>
+
+                            <div class="viaCardreload" data-type="forCard">
+                                <p>I would like to pay with</p>
+                                <div class="form">
+                                    <select>
+                                        <option>HongLeong Connect</option>
+                                        <option>Maybank2u</option>
+                                        <option>CIMB Clicks</option>
+                                        <option>RHB Now</option>
+                                        <option>AmOnline</option>
+                                        <option>FPX e-Payment Channel</option>
+                                        <option>PEx+ by HLBB</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+
+                    
+                    <hr>
+                    <div class="reloadConfirmation">
+                        <h4>Total payment: RM XXXX</h4>
+                        <label>
+                            <input type="checkbox" >
+                                <p>I authorize Scoop de pool to debit the above net charges from my credit card and agree to iPay88 privacy statement and I have read & agreed to iPay88 Privacy Statement.</p>
+                        </label>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="btnSummaryCta"><button class="btnMainS" onclick="window.location.href='success_topUp.html'">PROCEED TO TOP UP</button></div>
+                </div>
+                <div class="clear"></div>
+
+            </section>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="wrapperFooter">
+        <section>
+            <div class="col-1-2 left">
+                <div class="footerLogo"><img src="images/logo.png" alt="Scoop de pool" /></div>
+                <p>
+                    Scoopdepool is more than an online shopping website, is a combination of entertainment, shopping, fashion and trendy for new generation. We create fair & transparent entertaining shopping experience, we are here  to accomplish your all-time wishlist. Wish you scoop the pool.
+                </p>
+            </div>
+            <div class="col-1-2 right">
+                <div class="sitemap">
+                    <ul>
+                        <li>
+                            <h2>INFORMATION</h2>
+                            <ol>
+                                <li class="txtLink"><a href="##">Products</a></li>
+                                <li class="txtLink"><a href="##">How to scoop</a></li>
+                                <li class="txtLink"><a href="##">About</a></li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h2>SUPPORT</h2>
+                            <ol>
+                                <li>Customer care</li>
+                                <li>Privacy Policy</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <h2>WE ACCEPT</h2>
+                            <div class="acccptedPayment"><img src="images/temp-card.jpg" alt=""></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </section>
+    </div>
+    <div class="copyrightFooter">© scoopdepool 2016. ALL RIGHTS RESERVED.</div>
+</footer>
+
+</body>
+</html>

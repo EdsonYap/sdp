@@ -1,3 +1,6 @@
+// temp bug fix
+//$(window).resize(function(){location.reload();});
+
 var isMobile = {
 	Android: function() {
 		return navigator.userAgent.match(/Android/i);},
@@ -22,12 +25,15 @@ function init(){
 	$('.wrapper').css('opacity','0');
 	pageTransition();
 
+
 	resizeEvt();
 	initScroll();
 	mainWindowSize();
 
 	orderedToggle();
 	registerDetails();
+	topUpMethodScroll();
+
 	faqAccordion();
 	defaultPlaceHolder();
 
@@ -98,7 +104,6 @@ function pageTransition (){
 		e.preventDefault();
 		
 		if(dummyLink =='##' || dummyLink == '#' ) {
-			//trace('got')
 				}
 				else {
 						anchor.add($('.wrapper')).animate({'opacity' : 0}, 300, function() {
@@ -186,6 +191,72 @@ function registerDetails (){
 		registerForm.height(registerHeight+20);
 		$(this).fadeOut('fast');
 	});
+
+	// reload radio
+	$(".reloadPreset .presetNo").click(function(){
+	  $(this).parent().parent().addClass("selected").siblings().removeClass("selected"); 
+	});
+
+	$(".paymentSelect").click(function(){
+	  $(this).parent().addClass("selected").siblings().removeClass("selected"); 
+	});
+}
+
+function topUpMethodScroll(){
+	var methodDetailsScroll = $('.methodDetailsScroll'),
+		forCcHeight = $('.viaCreditCard').innerHeight(),
+		forOnlineHeight = $('.viaOnlineBanking').innerHeight(),
+		forOfflineHeight = $('.viaOfflineTransfer').innerHeight(),
+		forCardHeight = $('.viaCardreload').innerHeight();
+
+	var	methodDetailsLength = $('.methodDetailsScroll > div').length;
+	var defaultReloadWidth = $('.reloadDetails').width();
+
+	$('.methodDetailsScroll > div').each(function(){
+		$(this).width(defaultReloadWidth);
+	});
+
+	methodDetailsScroll.width(defaultReloadWidth*methodDetailsLength) // total width
+
+	//current height
+	var paymentMethodDetails = $('.paymentMethodDetails');
+	paymentMethodDetails.height(forCcHeight);
+
+	var paymentSelectLabel = $(".paymentSelect label");
+
+	var j;
+	for(j=0; j< paymentSelectLabel.length; j++){
+		var currentLabel = paymentSelectLabel[j];
+		currentLabel.onclick = paymentFunc;
+    }
+
+    function paymentFunc(){
+    	var forPayment = $(this).parent().attr("rel");
+    	var duration = 0.2;
+
+    	switch (forPayment) {
+    		case 'forCc':
+    			TweenMax.to(methodDetailsScroll,duration,{marginLeft: -(defaultReloadWidth*0)});
+    			TweenMax.to(paymentMethodDetails,duration,{height:forCcHeight});
+    		break;
+
+    		case 'forOnline':
+    			TweenMax.to(methodDetailsScroll,duration,{marginLeft: -(defaultReloadWidth*1)});
+    			TweenMax.to(paymentMethodDetails,duration,{height:forOnlineHeight});
+    		break;
+
+    		case 'forOffline':
+    			TweenMax.to(methodDetailsScroll,duration,{marginLeft: -(defaultReloadWidth*2)});
+    			TweenMax.to(paymentMethodDetails,duration,{height:forOfflineHeight});
+    		break;
+
+    		case 'forCard':
+    			TweenMax.to(methodDetailsScroll,duration,{marginLeft: -(defaultReloadWidth*3)});
+    			TweenMax.to(paymentMethodDetails,duration,{height:forCardHeight});
+    		break;
+    	}
+    }
+
 }
 
 function faqAccordion(){
@@ -204,6 +275,16 @@ function faqAccordion(){
 	}
 }
 
+function layoutFunc(){
+	function fProductFunc (){
+		var wWidth = $(window).width();
+		var wWidthPercent = wWidth/100
+
+		var fProductImg = $('.fProductImg');
+		fProductImg.find('img').width(wWidth - (wWidthPercent*50));
+	}
+	fProductFunc();
+}
 
 var thisNo = 0;
 function mainWindowSize () {
@@ -217,16 +298,12 @@ function mainWindowSize () {
 	$('.wSize').css({'width':(wWidth)});
 	$('.hSize').css({'height':(wHeight)});
 	
-	//trace(wWidth);
+	trace(wWidth);
 	//trace(wHeight);
 	
 	
 	/* equal height */
-
-	var featureProductsCarousel = $('.featureProductsCarousel').height() +2 //+2 for border;
-	if(wWidth>960){
-		$('.featureMediaContent').height(featureProductsCarousel)
-	}
+	layoutFunc();
 
 	// value
 	equalHeight($(".dashBoardEqualHeight"));
@@ -422,6 +499,8 @@ function resizeEvt () {
         setTimeout(function(){
           mainWindowSize();
           initScroll();
+          topUpMethodScroll();
+          layoutFunc();
         }, 30);
 	});
 };

@@ -844,13 +844,6 @@ nav {
 .featureProducts {
 	@include positionIndex (relative);
 	display: block;
-	.featureProductsCarousel {
-		@include positionIndex(relative);
-		display: block;
-		border: 1px solid #999999;
-
-		.bx-wrapper .bx-pager {	text-align: left;}
-	}
 	.fProductsCta {
 		@include positionIndex(absolute,3);
 		display: block;
@@ -860,6 +853,42 @@ nav {
 			text-transform: uppercase;
 		}
 	}
+}
+
+.featureProductsCarousel {
+	@include positionIndex(relative);
+	display: block;
+	overflow-y: hidden;
+	border: 1px solid #999999;
+
+	.bx-wrapper .bx-pager {	text-align: left;}
+	ul {
+		@extend .ulReset;
+		width: 1000%;
+		overflow-y: scroll; 
+		li {
+			border: 1px solid #999999;
+			@include positionIndex(relative);
+			float: left;
+			display: block;
+			margin: 0 10px 0;
+			.fProductImg {
+				img {
+					width: 100%;
+					height:  auto;
+				}
+			}
+		}
+	}
+	ul.bxsliderSmall {
+		li {
+			border: 0;
+			margin: 0;
+		}
+	}
+}
+.featureProductsCarousel.mobileNativeSlider {
+	border: 0;
 }
 
 .featureMediaContent {
@@ -1290,121 +1319,124 @@ nav {
 .wrapperPdInner {
 	@includef positionIndex(relative);
 	display: block;
-	.pdInner {
-		.pdInnerImg {
-			@include positionIndex(relative);
-			display: block;
-			
-			@include border-radius(3px);
-			background: $userNavColor;
-			.pdInnerLarge {
-				@include positionIndex(relative);
-				border: 1px solid $boderOutline;
-				img {
-					width: 100%;
-					height:  auto;
-				}
-			}
-			.pdInnerThumb {
-				@include positionIndex(relative);
-				width: 100.6%;
-				ul {
-					@extend .ulReset;
-					text-align: center;
-					li {
-						display: inline-block;
-						width: 24%;
-						border: 1px solid transparent;
-						img {
-							width: 100%;
-							height:  auto;
-							display: block;
-						}
-					}
-					li:hover {border: 1px solid $shoutOutColor;}
-				}
-			}
-		}
-	.wrapperPdInnerInfo {
+}
+.pdInner {
+	text-align: center;
+	.pdInnerImg {
 		@include positionIndex(relative);
 		display: block;
-		.pdInnerInfo {
-			width: 920px/960px *100%;			
-			.pdInnerInfoDate{
-				font-family: 'arqL';
-				.actualClosingDate{
-					@include positionIndex(relative);
-					display: inline-block;
-					
-					span.ac { @include fontSizeHeight(0.778em,$dLineHeight); display: block;}
-					span.acDate { @include fontSizeHeight(1em,$dLineHeight); display:inline;}
-					span.acYear { @include fontSizeHeight(0.778em,$dLineHeight); display: inline;}
-				}
-				.infoDateDivider{
-					@include positionIndex(relative);
-					display: inline-block;
-					width: 1px;
-					height: 30px;
-					margin: 0 10px;
-					background: $dColor;
-				}
-				.infoDatePercent {
-					@include positionIndex(relative);
-					display: inline-block;
-					@include fontSizeHeight(2.444em, $dLineHeight);
-				}
-			}
-			.pdInnerShare{
-				@include positionIndex(absolute,3);
-				display: block;
-				top: 0;
-				right: 0;
-			}
-			.pdInnerTitle{
-				@include positionIndex(relative);
-				h2 { padding: 0;}
-			}
-			.pdInnerSubTitle{}
-			.pdInnerPrice{
-				@include positionIndex(relative);
-				color: $sndColor;
-				@include fontSizeHeight(1.556em, $dLineHeight);
-			}
-			.pdInnerSummary{
-				p { @include fontSizeHeight(1.111em,$dLineHeight); }
-			}
-			.pdInnerCtaContainer{
-				@include positionIndex(relative);
-				display: block;
-				padding: 40px 0 0 0;
-					.btnAddToBucket{
-						@include positionIndex(relative);
-						display: inline-block;
-						margin: 0 5px 0 0;
-						vertical-align: top;
-						button.btnBlueBorder{
-							img {
-								@include positionIndex (absolute);
-								right: 10px;
-								top: 5px;
-								height: 65%;
-								width: auto;
-							}
-						}
-					}
-					.btnScoopIt{
-						@include positionIndex(relative);
-						display: inline-block;
-						vertical-align: top;
-						button.btnMainCta{}
-					}
-					.btnGoldCoin{
-						@include positionIndex(relative);
-						display: inline-block;
-					}
-				}
+		@include border-radius(3px);
+		background: $userNavColor;
+		.pdInnerLarge {
+			@include positionIndex(relative);
+			border: 1px solid $boderOutline;
+			img {
+				width: 100%;
+				height:  auto;
 			}
 		}
+		.pdInnerThumb {
+			@include positionIndex(relative);
+			width: 100.6%;
+			ul {
+				@extend .ulReset;
+				text-align: center;
+				li {
+					display: inline-block;
+					width: 24%;
+					border: 1px solid transparent;
+					img {
+						width: 100%;
+						height:  auto;
+						display: block;
+					}
+				}
+				li:hover {border: 1px solid $shoutOutColor;}
+			}
+		}
+	}
+	
+}
+.wrapperPdInnerInfo {
+	@include positionIndex(relative);
+	display: block;
+	text-align:left;
+}
+.pdInnerInfo {
+	width: 920px/960px *100%;			
+	.pdInnerInfoDate{
+		font-family: 'arqL';
+		.actualClosingDate{
+			@include positionIndex(relative);
+			display: inline-block;
+			
+			span.ac { @include fontSizeHeight(0.778em,$dLineHeight); display: block;}
+			span.acDate { @include fontSizeHeight(1em,$dLineHeight); display:inline;}
+			span.acYear { @include fontSizeHeight(0.778em,$dLineHeight); display: inline;}
+		}
+		.infoDateDivider{
+			@include positionIndex(relative);
+			display: inline-block;
+			width: 1px;
+			height: 30px;
+			margin: 0 10px;
+			background: $dColor;
+		}
+		.infoDatePercent {
+			@include positionIndex(relative);
+			display: inline-block;
+			@include fontSizeHeight(2.444em, $dLineHeight);
+		}
+	}
+	.pdInnerShare{
+		@include positionIndex(absolute,3);
+		display: block;
+		top: 0;
+		right: 0;
+	}
+	.pdInnerTitle{
+		@include positionIndex(relative);
+		h2 { padding: 0;}
+	}
+	.pdInnerSubTitle{}
+	.pdInnerPrice{
+		@include positionIndex(relative);
+		color: $sndColor;
+		@include fontSizeHeight(1.556em, $dLineHeight);
+	}
+	.pdInnerSummary{
+		p { @include fontSizeHeight(1.111em,$dLineHeight);}
+	}
+}
+.pdInnerInfo {
+	.pdInnerCtaContainer {
+		display: block;
+	}
+} /* set for mobile */
+.pdInnerCtaContainer{
+	@include positionIndex(relative);
+	display: none;
+	padding: 40px 0 0 0;
+	.btnAddToBucket{
+		@include positionIndex(relative);
+		display: inline-block;
+		margin: 0 5px 0 0;
+		vertical-align: top;
+		button.btnBlueBorder{
+			img {
+				@include positionIndex (absolute);
+				right: 10px;
+				top: 5px;
+				height: 65%;
+				width: auto;
+			}
+		}
+	}
+	.btnScoopIt{
+		@include positionIndex(relative);
+		display: inline-block;
+		vertical-align: top;
+		button.btnMainCta{}
 	}
 }
 
@@ -1760,45 +1792,45 @@ nav {
 .wrapperSuccess {
 	@include positionIndex(relative);
 	display: block;
-	margin: 40px 0 0 0;
-	.success {
-		padding: 0 10px;
-		strong {
-			@include fontSizeHeight(1.444em, $dLineHeight);
- 			display: block;
- 			padding: 0 0 8px 0;
-			font-weight: normal;
-			font-family: 'arqR';
-		}
-	}
-	.successTitle {
-		@include positionIndex(relative);
-		display: block;
-		padding: 40px 10px 0;
-		a {
-			text-decoration: none;
-		}
-	}
-	.successContent {
-		@include positionIndex(relative);
-		display: block;
-		margin: 20px 0 0 0;
-		background: $userNavColor;
-		border: 1px solid $boderOutline;
-		@include border-radius(3px);
-		a { color: $dColor; text-decoration: none; }
-		a:hover { color: $bgcInvertAnchor}
+	margin: 40px 0 0 0;}
 
-		ul {
-			@extend .ulReset;
-			> li{
-				display: block;
-				padding: 0;
-				border-bottom: 1px solid $boderOutline;
-			}
-			> li:last-child {
-				border: 0px;
-			}
+.success {
+	padding: 0 10px;
+	strong {
+		@include fontSizeHeight(1.444em, $dLineHeight);
+			display: block;
+			padding: 0 0 8px 0;
+		font-weight: normal;
+		font-family: 'arqR';
+	}
+}
+.successTitle {
+	@include positionIndex(relative);
+	display: block;
+	padding: 40px 10px 0;
+	a {
+		text-decoration: none;
+	}
+}
+.successContent {
+	@include positionIndex(relative);
+	display: block;
+	margin: 20px 0 0 0;
+	background: $userNavColor;
+	border: 1px solid $boderOutline;
+	@include border-radius(3px);
+	a { color: $dColor; text-decoration: none; }
+	a:hover { color: $bgcInvertAnchor}
+
+	ul {
+		@extend .ulReset;
+		> li{
+			display: block;
+			padding: 0;
+			border-bottom: 1px solid $boderOutline;
+		}
+		> li:last-child {
+			border: 0px;
 		}
 	}
 }
@@ -2012,6 +2044,9 @@ nav {
 		display: inline-block;
 		vertical-align: middle;
 		margin: 0 10px 0 0;
+		a {
+			display: block;
+		}
 	}
 }
 
@@ -2057,8 +2092,25 @@ nav {
 	@include positionIndex(absolute,4);
 	display: block;
 	color:  $sndColor;
-	top: 0;
+	text-align:right;
+	top: -3px;
 	right: 0;
+	span {
+		color: $sndColor;
+	}
+}
+span.strength-meter {
+	@include positionIndex(absolute);
+	right: 0;
+	@include border-radius(3px);
+	@include fontSizeHeight(0.778em,$dLineHeight);
+}
+span.help {
+	@include positionIndex(absolute);
+	padding: 2px 0 0 0;
+	right: 0;
+	display: block;
+	@include fontSizeHeight(0.778em,$dLineHeight);
 }
 
 .registerContent label {
@@ -2145,6 +2197,9 @@ a:hover span.tria{
 		height: 25px;
 		padding: 5px;
 		vertical-align: sub;
+	}
+	span.form-error {
+		color: $sndColor;
 	}
 }
 .registerCta {
@@ -2390,6 +2445,284 @@ a:hover span.tria{
 	}
 }
 
+.wrapperReloadHeader {
+	@include positionIndex(relative);
+	display: block;
+	margin: 40px 0 40px 0;
+	.reloadHeader {
+		@include positionIndex(relative);
+		display: block;
+	}
+}
+
+.wrapperReloadContent {
+	@include positionIndex(relative);
+	display: block;
+	h4 {
+		padding: 10px 0 20px;
+	}
+	hr { border-color: $boderOutline}
+}
+.reloadAmount, .reloadDetails {
+	@include positionIndex(relative);
+	margin: 20px 0 0 0;
+}
+.reloadPoints {
+	@include positionIndex(relative);
+	margin: 0 0 40px 0;
+	ul {
+		@extend .ulReset;
+		text-align: left;
+		li.preferAmount { width: 95%; margin: 0 0 10px 0;}
+		li {
+			width: 46%;
+			display: block;
+			float: left;
+			text-align: center;
+			margin: 0 10px 10px 0;
+		}
+	}
+}
+.remainingPoints {
+	@include positionIndex(relative);
+	display: block;
+	padding: 10px 0 0 0;
+}
+.reloadPreset {
+	@include positionIndex(relative);
+	display: block;
+}
+
+.presetNo {
+	display: block;
+	background: $userNavColor;
+	border: 1px solid $boderOutline;
+	color: $dColor;
+	cursor: pointer;
+	@include border-radius(3px);
+
+	cursor: pointer;
+
+	label {
+		display: block;
+		width: 100%;
+		padding: 10px 20px;
+
+		@include fontSizeHeight (1.222em, $dLineHeight);
+		font-family: 'arqR';
+		cursor: pointer;
+	}
+	
+	input[type="radio"] {
+		@include positionIndex(absolute);
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+	input[type="text"] {
+		display: block;
+		width: 100%;
+		border: 0;
+		background: transparent;
+		@include fontSizeHeight (1em, $dLineHeight);
+		color: $dColor;
+		font-family: 'arqR';
+	}
+}
+.preferAmount label { padding: 9px 20px;}
+
+li.selected .reloadPreset {
+	.presetNo {
+		border: 1px solid $shoutOutColor;
+		color: $shoutOutColor;
+		cursor: default;
+	}
+}
+li.selected .form {
+	input {
+		border: 1px solid $shoutOutColor;
+		color: $shoutOutColor;
+		cursor: default;
+	}
+}
+
+.paymentMethodDetails {
+	@include positionIndex(relative);
+	display: block;
+	overflow: hidden;
+}
+.methodDetailsScroll {
+	@include positionIndex(relative);
+	display: block;
+	width: 100%;
+}
+
+.reloadMethod {
+	@include positionIndex(relative);
+	margin: 0 0 11px 0;
+	ul {
+		@extend .ulReset;
+		@include positionIndex(relative, 3);
+		text-align: left;
+		li {
+			display: inline-block;
+			margin: 0 20px 0 0;
+		}
+	}
+}
+.reloadMethodLine {
+	@include positionIndex(absolute);
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	display: block;
+	background: $dColor;
+}
+
+.paymentSelect {
+	@include positionIndex(relative);
+	display: block;
+	color: $dColor;
+	cursor: pointer;
+
+	label {
+		display: block;
+		width: 100%;
+		padding: 10px 5px;
+
+		@include fontSizeHeight (1.222em, $dLineHeight);
+		font-family: 'arqR';
+		cursor: pointer;
+	}
+	input[type="radio"] {
+		@include positionIndex(absolute);
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+}
+li.selected .paymentSelect {
+	border-bottom: 2px solid $shoutOutColor;
+	color: $shoutOutColor;
+	cursor: default;
+}
+.viaCreditCard, .viaOnlineBanking, .viaOfflineTransfer, .viaCardreload { float: left;}
+.viaCreditCard {
+	@include positionIndex (relative);
+	padding: 0 0 40px 0;
+	select {
+		@include fontSizeHeight(1.222em, $dLineHeight);
+		color: $dColor;
+		font-family: 'arqR';
+		width: 100%;
+		background: transparent;
+		border: 0;
+		padding: 9px 10px;
+		option {
+			background: $userNavColor;
+		}
+	}
+}
+
+.issueFrom {
+	@include positionIndex(relative);
+	.ccIssueBank, .ccIssueCountry {
+		display: block;
+		@include border-radius(3px);
+		margin: 0 2% 10px 0;
+		border: 1px solid $formBorder;
+		background: $userNavColor;
+		float: left;
+	}
+	.ccIssueBank { width: 40%}
+	.ccIssueCountry{	width: 58%; margin: 0 0 10px 0;}
+}
+
+.creditCardMainInfo {
+	@include positionIndex(relative);
+	display: block;
+	.ccName, .ccCcv {
+		@include positionIndex(relative);
+		display: block;
+		margin: 0 2% 0px 0;
+		float: left;
+	}
+	.ccName { width: 68%;}
+	.ccCcv { width: 30%; margin: 0 0 0px 0;}
+}
+
+.creditCardExpired {
+	@include positionIndex(relative);
+	display: block;
+	.ccMonth, .ccYear {
+		@include positionIndex(relative);
+		width: 49%;
+		display: block;
+		margin: 0 2% 0px 0;
+		float: left;
+	}
+	.ccYear { margin: 0 0 0px 0;}
+}
+
+.viaOnlineBanking, .viaCardreload {
+	@include positionIndex(relative);
+	display: block;
+	min-height: 200px;
+	p {
+		padding: 0 0 5px 0;
+	}
+}
+
+.reloadConfirmation {
+	@include positionIndex(relative);
+	display: block;
+	margin: 0 0 20px 0;
+	h4 { padding: 20px 0 10px 0;}
+	input {
+		width: 25px;
+		height: 25px;
+		margin: 10px 10px 0 0;
+		display: block;
+		float: left;
+		vertical-align: middle;
+	}
+	p {
+		display: inline;
+		vertical-align: middle;
+	}
+}
+
+.viaOfflineTransfer, .viaCardreload {
+	@include positionIndex(relative);
+	display: block;
+	p {
+		padding: 0 0 10px 0;
+	}
+}
+.accountTable {
+	@include positionIndex(relative);
+	display: block;
+	ul {
+		@extend .ulReset;
+		li {
+			width: 50%;
+			float: left;
+			display: block;
+			border: 1px solid $boderOutline;
+			padding: 10px;
+		}
+		li:nth-child(1), li:nth-child(2) { background: $boderOutline;}
+		li:nth-child(1) {border-right: 1px solid $userNavColor;}
+		li:nth-child(2) { border-left: 1px solid $userNavColor;}
+		li:nth-child(3), li:nth-child(4) { height: 70px; }
+	}
+}
+
+.successTopUp {}
+
+
+
 /* about */
 .wrapperAbout{
 	@include positionIndex(relative);
@@ -2494,17 +2827,143 @@ a:hover span.tria{
 
 .wrapperHowFour, .wrapperHowThree, .wrapperHowTwo, .wrapperHowOne {
 	padding: 60px 0 0 0;
+	text-align: center;
+	h2{	@include fontSizeHeight(2.333em,$dLineHeight);}
+	hr { width: 20%; margin: 0 auto;}
+}
+.howFour {}
+
+.wrapperSimpleSteps {
+	@include positionIndex(relative);
+	display: block;
+	margin: 40px 0 0 0;
+	ul {
+		@extend .ulReset;
+		@include positionIndex(relative);
+		width: 900px;
+		margin: 0 auto;
+		text-align: center;
+		li {
+			@include positionIndex(relative);
+			display: inline-block;
+			vertical-align: top;
+			width: 45%;
+			margin: 0 auto;
+		}
+		li.steps1, li.steps3 {
+			.simpleImg { float: right; margin-left: 10px; margin-right: 20px;}
+			.simpleDescContainer { text-align: right; margin-right: 20px;}
+		}
+		li.steps2, li.steps4 {
+			.simpleImg { float: left; margin-right: 10px; margin-left: 20px; padding-top: 80px;}
+			.simpleDescContainer { text-align: left; margin-left: 20px;  padding-top: 80px;}
+		}
+		li.steps3 {
+			.simpleImg, .simpleDescContainer {padding-top: 0px; margin-top: -40px}
+		}
+		li.steps4 {
+			.simpleImg, .simpleDescContainer {padding-top: 40px; margin-top: 0px}
+		}
+	}
+}
+.simpleImg { @include positionIndex(relative);}
+.simpleDescContainer {display: block;}
+.simpleDesc { display: inline-block; vertical-align: middle;}
+.simpleDescHeight { display: inline-block; vertical-align: middle; height: 153px;}
+
+.wrapperStepDirection {
+	@include positionIndex(absolute);
+	width: 22%;
+	.stepDirectionContainer {
+		@include positionIndex(relative);
+		display: block;
+		.stepDirectionVerti, .stepDirectionHori {
+			@include positionIndex(absolute);
+			display: block;
+			background: #88d5e9;}
+		.stepDirectionVerti { width: 100%; height: 1px; }
+		.stepDirectionHori { width: 1px; height: 25px; }
+	}
 }
 
-.wrapperHowFour {
-	.howFour {}
+li.steps1 {
+	.wrapperStepDirection { right: -22%; top: 46px;}
+	.stepDirectionVerti { top: 0;}
+	.stepDirectionHori { right: 0;}
 }
-.wrapperHowThree {
-	.howThree{}
+li.steps2 {
+	.wrapperStepDirection { left: -24%; top: 166px;}
+	.stepDirectionVerti { top: 0;}
+	.stepDirectionHori { left: 0;}
 }
-.wrapperHowTwo{
-	.howTwo{}
+li.steps3 {
+	.wrapperStepDirection { right: -22%; top: 16px;}
+	.stepDirectionVerti { top: 0;}
+	.stepDirectionHori { right: 0;}
 }
+
+.howThree{}
+
+.howTwo{}
+.wrapperTransaction {
+	@include positionIndex(relative);
+	display: block;
+	margin: 40px auto 0;
+}
+.trans {
+	@include positionIndex(relative);
+	display: inline-block !important;
+	vertical-align: top;
+	background: #fff;
+	margin: 0 1%;
+	padding: 20px 40px;
+	border: 1px solid $boderOutline;
+	.transImg {
+		@include positionIndex(relative);
+		display: block;
+		img {
+			display: block;
+			margin: 0 auto;
+			width: auto;
+		}
+	}
+}
+
+.wrapperDream {
+	@include positionIndex(relative);
+	display: block;
+	margin: 40px 0 0;
+	p {
+		width: 90%;
+		display: block;
+		margin: 0 auto;
+		@include fontSizeHeight(1.222em, $dLineHeight);
+	}
+	.dreamImg {
+		@include positionIndex(relative);
+		display: block;
+		margin: 20px 0;
+	}
+}
+.dreamCta {
+	display: inline-block;
+	button {min-width: 220px;}
+}
+
+
+
+.iconsSteps {
+	width: 144px;
+	height: 153px;
+	display: inline-block;
+	vertical-align: middle;
+	background-image: url(../images/how_steps_sprite.png);}
+
+.iconTopUp { background-position: 0 0;}
+.iconScoopIt { background-position: -144px 0;}
+.iconRelease { background-position: -144px*2 0;}
+.iconWinner { background-position: -144px*3 0;}
+
 .wrapperHowOne{
 	@include positionIndex(relative);
 	display: block;
@@ -2679,6 +3138,7 @@ a:hover span.tria{
 .col-5-12 {width: 400px/960px * 100%;}
 .col-6-12 {width: 480px/960px * 100%;}
 .col-7-12 { width: 560px/960px * 100%;}
+.col-10-12 {width: 800px/960px * 100%;}
 
 .col-5-12.maxwidth { max-width: 400px/960px *100%; width: auto;}
 .col-6-12.maxwidth { max-width: 480px/960px *100%; width: auto;}
@@ -2886,6 +3346,7 @@ button.btnBlueSBorder {
 }
 button.btnBlueSBorder:hover {background: $thirdColor; color: $userNavColor;}
 button.btnBlueSBorder:active { background: $thirdAltColorActive; color: $userNavColor}
+button.btnBlueSBorder.selected { background: $userNavColor; color: $thirdColor; border: 1px transparent; cursor: default;}
 
 button.btnGreyBorder {
 	background: $userNavColor;
@@ -2925,7 +3386,7 @@ button.btnBlankBorder.active {}
 
 
 /* end of button cta */
-
+.mobHide { display: inherit;}
 .mobShow {display: none;}
 /* media quiries */
 @media (max-width: 1384px){}
@@ -3013,6 +3474,7 @@ button.btnBlankBorder.active {}
 		@include positionIndex(relative);
 		display: block;
 		padding: 10% 0 0 8%;
+		color: $userNavColor;
 		a{
 			color: $userNavColor;
 			text-decoration: none;
@@ -3065,6 +3527,10 @@ button.btnBlankBorder.active {}
 		}
 	}
 	.scooperCarousel ul li { width: 100%;}
+
+	.btnViewAll {
+		top: 5px;
+	}
 	
 	/* carousel slider */
 	.wrapperCarouselContent {
@@ -3090,8 +3556,35 @@ button.btnBlankBorder.active {}
 		display: none;
 	}
 
+	.featureProducts {
+		.fProductsCta {
+			bottom: 5%;
+			right: 5%;
+		}
+	}
+
 
 	/* products */
+	.wrapperFullProducts {
+		.fullProducts {
+			.wrapperProducts {
+				margin: 30px 0 0 0;
+			}
+		}
+		.productExpired {
+			text-align: right;
+			img {
+				width: 80%;
+				height: auto;
+			}
+		}
+	}
+	.wrapperFilterArrange {
+		top: -5px;
+		.filterArrangeSelection {
+			select{	min-width: 150px;}
+		}
+	}
 	.productsListing {
 		ul{
 			li{
@@ -3109,9 +3602,78 @@ button.btnBlankBorder.active {}
 			}
 		}
 	}
+	.mainDashboard.earnDashboard {
+		ul{
+			li{
+				margin: 0 0 4%;
+				width: 48%;
+			}
+			li:nth-child(even){
+				margin-left: 4%;
+			}
+		}
+	}
+	.icon-true { margin: 0 25px 0 10px;}
+	.summaryTnc input { vertical-align: middle;}
 	// product rearrangement
 	.productNameContainer {}
 	.productImgContainer {}
+	/* product inner */
+	.pdInnerInfo {
+		.pdInnerCtaContainer {
+			display: none;
+		}
+	} /* set for mobile */
+	.pdInnerCtaContainer {
+		display:  block;
+		padding: 20px 0 0 0;
+		.btnAddToBucket {
+			width: 50%;
+			display: block;
+			float: left;
+			margin: 0;
+		}
+		.btnScoopIt{
+			width: 50%;
+			display: block;
+			float: left;
+			button.btnMainCta{
+				display: block;
+				padding: 6px 20px;
+				width: 100%;
+			}
+		}
+	}
+
+	.pdInner {
+		.pdInnerImg {
+			.pdInnerThumb {
+				display: none;
+			}
+		}
+	}
+
+	.wrapperPdInnerDetails {
+		padding: 30px 0 0 0;
+		.wrapperPdInnerContent {
+			padding: 20px 0 30px 0;
+			.pdInnerFeaturesContent {
+				p {
+					padding: 0;
+				}
+			}
+		}
+
+	}
+	.pdInnerFeaturesContent {
+		padding: 0 0 0px 0;
+		.col-1-2 {
+			width: 100%;
+			float: none;
+
+		}
+	}
+	
 	/* bucket */
 	.bucketContainer { width: 100%;}
 	.bucketDescTitle { display: none;}
@@ -3146,6 +3708,11 @@ button.btnBlankBorder.active {}
 	}
 	.registerMethod {
 		text-align: center;
+		display: block;
+		.btnFbRegister {
+			display: block;
+			margin: 0 0 10px 0;	
+		}
 	}
 	.justOr {
 		text-align: center;
@@ -3158,6 +3725,40 @@ button.btnBlankBorder.active {}
 		button.btnMainS  {
 			width: 100%;
 			min-width: auto;
+		}
+	}
+
+	.form {
+		width: 96.5%;
+		margin: 0 2% 10px 0;
+	}
+	span.form-error { margin: 5px 0 0 28px;	display: block;}
+
+	.formContainer {
+		ul{
+			li{
+				width: 98%;
+			}
+		}
+	}
+	.formErrorToolTip {
+		right: 5%;
+	}
+	.registerCta {
+		button.btnMainS {
+			width: 60%;
+		}
+	}
+	.formSubmission {
+		width: 93%;
+		margin: 0 auto;
+	}
+	.editFormContainer.formContainer {
+		ul {
+			li { margin-bottom: 15px;}
+		}
+		.formErrorToolTip {
+			top: -15px;
 		}
 	}
 	/* dashboard */
@@ -3242,6 +3843,41 @@ button.btnBlankBorder.active {}
 		padding: 9px 25px 11px;
 		margin: 0 0 -3px 0;
 	}
+	/* about */
+	.wrapperWhatIsSdp {
+		padding: 50px 0;
+		.aboutCta {
+			button { padding:10px 20px;}
+		}
+	}
+	.aboutGoldCoinsStamp {
+		text-align: center;
+		top: -25px;
+		img {
+			width: 50px;
+			height:  auto;
+		}
+	}
+	.wrapperSubscribe {
+		.subscribe{
+			.subscribeEmail {
+				width: 90%;
+				height: auto;
+				padding: 10px 0;
+			}
+		}
+		.subscribeCta {
+			display: block;
+			text-align: center;
+			button.btnBlankBorder  {
+				min-width: auto;
+				width: 60%;
+				margin: 0 auto;
+				max-width: 220px;
+				padding: 10px 7px;
+			}
+		}
+	}
 
 	/* support */
 	.wrapperSupport {
@@ -3258,6 +3894,13 @@ button.btnBlankBorder.active {}
 	}
 	.wrapperEnquiryForm {
 		padding: 10px 0 0 0;
+		.form {
+			width: 100%;
+			margin: 0 0 10px 0;
+		}
+		.formErrorToolTip {
+			right: 0;
+		}
 	}
 	.enquiryForm {
 		ul.left, ul.right{
@@ -3275,6 +3918,86 @@ button.btnBlankBorder.active {}
 	}
 	/* end of support */
 
+	/* how */
+	.iconsSteps {
+		width: 104px;
+		height: 111px;
+		background-size: 416px 111px;}
+
+	.iconTopUp { background-position: 0 0;}
+	.iconScoopIt { background-position: -104px 0;}
+	.iconRelease { background-position: -104px*2 0;}
+	.iconWinner { background-position: -104px*3 0;}
+	.simpleDescHeight { height: 111px;}
+	.wrapperSimpleSteps {
+		ul {
+			width: 100%;
+			li {
+				width: 100%;
+				margin: 0 auto;
+				.simpleImg {
+					width: 104px;
+				}
+			}
+			li.steps1, li.steps3 {
+				.simpleImg { float: left; margin-left: 10px; margin-right: 20px;}
+				.simpleDescContainer { float: left; text-align: left; margin-right: 20px;}
+			}
+			li.steps2, li.steps4 {
+				.simpleImg { float: right; margin-right: 10px; margin-left: 20px; padding-top: 0px;}
+				.simpleDescContainer { float: right; text-align: right; margin-left: 20px;  padding-top: 0px;}
+			}
+			li.steps3, li.steps4 {
+				.simpleImg, .simpleDescContainer {padding-top: 0px; margin-top: 0px}
+			}
+		}
+	}
+	.simpleDesc {
+		p {
+			@include fontSizeHeight(1.222em, $dLineHeight);
+		}
+	}
+
+	.trans {
+		width: 46%;
+		padding: 10px 15px;
+		height: 220px;
+		.transImg {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+
+	.wrapperStepDirection {
+		@include positionIndex(absolute);
+		width: 15%;
+		.stepDirectionContainer {
+			@include positionIndex(relative);
+			display: block;
+			.stepDirectionVerti, .stepDirectionHori { display: block; }
+			.stepDirectionVerti { width: 100%; height: 1px; }
+			.stepDirectionHori { width: 1px; height: 45px; }
+		}
+	}
+
+	li.steps1 {
+		.wrapperStepDirection { right: 10%; top: 46px;}
+		.stepDirectionVerti { top: 0;}
+		.stepDirectionHori { right: 0;}
+	}
+	li.steps2 {
+		.wrapperStepDirection { left: 10%; top: 46px;}
+		.stepDirectionVerti { top: 0;}
+		.stepDirectionHori { left: 0;}
+	}
+	li.steps3 {
+		.wrapperStepDirection { right: 10%; top: 46px;}
+		.stepDirectionVerti { top: 0;}
+		.stepDirectionHori { right: 0;}
+	}
+
 	.sitemap {
 		ul {
 			li {
@@ -3282,6 +4005,54 @@ button.btnBlankBorder.active {}
 			}
 		}
 	}
+	/* form */
+	.formContainer {
+		ul {
+			display: inline-block;
+			li {
+				margin: 0 6px;
+			}
+		}
+	}
+
+	/* pop up */
+	.wrapperScooping {
+		width: 100%;
+		margin: 0 auto;
+		padding: 20px 10px 20px;
+		text-align: left;
+		background: #fff;
+		border: 1px solid $boderOutline;
+		@include border-radius(3px);
+		.btnBucketRemove {
+			display: block;
+			top: -15px;
+			right: -5px;
+		}
+	}
+	
+	.scoopingCta {
+		margin: 10px 0 10px 0;
+		.btnSpCancel {
+			margin: 0 10px 0 0;
+			button {
+				padding: 6px 10px 7px;
+				width: auto;
+				@include fontSizeHeight(1.222em,$dLineHeight);
+			}
+		}
+		.btnSpNow {
+			display: inline-block;
+			vertical-align: top;
+			button {
+				width: auto;
+				@include fontSizeHeight(1.222em,$dLineHeight);
+				padding: 6px 15px;
+			}
+		}
+	}
+
+	/* end of pop up */
 
 	/* button */
 	button.btnMain {
@@ -3293,7 +4064,7 @@ button.btnBlankBorder.active {}
 	button.btnMain:active { @include box-shadow(0px,2px,0px,0px, rgba(195,47,0,1));}
 
 	button.btnMainS {
-		padding: 5px 5px;
+		padding: 5px 20px;
 		@include fontSizeHeight (1.222em, $dLineHeight);
 		@include box-shadow(0px, 2px, 0px, 0px, rgba(195,47,0,1));}
 
@@ -3416,12 +4187,31 @@ button.btnBlankBorder.active {}
 		}
 	}
 	/* dashboard */
+	.wrapperSuccess {
+		.success {
+			padding: 0;
+		}
+		margin: 20px 0 0 0;
+		.successTitle {
+			padding: 20px 5px 0;
+		}
+	}
+	a span.tria {
+		margin-bottom: 0;
+	}
+
+	.mobHide414 {
+		display:  none;
+	}
 }
 @media (max-width:412px){
 	.btnMobMenu { top: 3px;}
 	.btnUserMenu { top: 8px}
 }
 @media (max-width: 375px) {
+	.userMainDbCard {
+		min-height: 100px;
+	}
 	.productsListing {
 		ul{
 			li{
@@ -3438,7 +4228,8 @@ button.btnBlankBorder.active {}
 	}
 }
 @media (max-width:320px){
-	body { font-size: 80%;}
+	$defaultFontSize: 75%;
+	html {font-size: $defaultFontSize; -webkit-text-size-adjust: $defaultFontSize; -ms-text-size-adjust: $defaultFontSize;}
 	.wrapperLogo {
 		@include positionIndex(relative);
 		left: 0;
@@ -3464,12 +4255,15 @@ button.btnBlankBorder.active {}
 			}
 		}
 	}
+	/* bread crumb */
+	.wrapperBreadCrumb .breadCrumb { padding: 10px 0;}
 	/* product */
 	.productsListing {
 		ul{
 			li{
 				.product {
-					min-height: 325px;
+					height: 300px;
+					min-height: auto;
 					.productName {
 						p {
 							height: 55px;
@@ -3480,12 +4274,23 @@ button.btnBlankBorder.active {}
 		}
 	}
 	/* dashbaord */
+	.wrapperDashboard  {
+		margin: 10px 0 0 0;
+	}
 	.avatarThumb {
 		width: 60px;
 		height: 60px;
 	}
-	.dbCardCta button { width: auto;}
-
+	.dbCardCta {
+		 button { width: auto;}
+		 button.btnBlueSBorder {
+		 	padding: 6px 20px 6px;
+			margin: 0 0 -2px 0;
+		 }
+		 button.btnMainS  {
+		 	padding: 6px 20px;
+		 }
+	}
 	.coinsImg {
 		display: inline-block;
 		background-size: 50px 100px;
@@ -3493,10 +4298,15 @@ button.btnBlankBorder.active {}
 		height: 50px;
 	}
 	.silverCoin { background-position: 0 -50px;}
+
 	
+	/* footer */
+	.sitemap {
+		ul {
+			li { margin: 0 4px;}
+		}
+	}
 }
-
-
 
 /*-------------------- end of content --------------------*/
 /*-------------------- last extend --------------------*/
@@ -3527,4 +4337,3 @@ button.btnBlankBorder.active {}
 	font: 12px Arial, Helvetica, sans-serif;}
 
 .hide { display: none;}
-.mobHide { display: none;}

@@ -153,62 +153,63 @@
                         Or register with your email account below
                     </div>
                     <div class="wrapperFormContainer">
+                        <form action="" id="registration-form">
                         <div class="formContainer tr" id="registerForm">
                             <ul>
                                 <li>
-                                    <div class="formErrorToolTip"><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip" id="error-name"></div>
                                     <label>Name*</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="Name">
+                                        <input type="text" placeholder="Name" name="user" data-validation="length" data-validation-length="3-12" data-validation-error-msg="May I have your name? (3-12 chars)" data-validation-error-msg-container="#error-name" title="May I have your name? (3-12 chars)">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip"><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip" id="error-password"></div>
                                     <label>Password*</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="">
+                                        <input type="password" placeholder="Password" name="pass" data-validation="strength length" data-validation-length="min8" data-validation-strength="2" data-validation-error-msg="Try stronger password" data-validation-error-msg-container="#error-password" title="Min 8 characters with number and alphabet">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip"><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip" id="error-email"></div>
                                     <label>Email address*</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="Email">
+                                        <input type="text" placeholder="example@gmail.com" name="Email" data-validation="email" data-validation-error-msg="This is not an email" data-validation-error-msg-container="#error-email" title="Your email address">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip"><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip" id="error-confirmation"></div>
                                     <label>Confirm Password*</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="*****">
+                                        <input type="password" name="pass_confirmation" data-validation="confirmation" data-validation-error-msg="Password are not same" data-validation-error-msg-container="#error-confirmation" data-validation-confirm="pass" title="Type your password again">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip" style="display:none"><small>Invalid account</small></div>
-                                    <label>IC NO</label>
+                                    <div class="formErrorToolTip" id="error-ic"></div>
+                                    <label>IC Number</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="Email">
+                                        <input type="text" placeholder="880808 14 8888" name="Ic Number" data-validation="number" data-validation-error-msg="Not an IC No." data-validation-error-msg-container="#error-ic" data-validation-help="123456 12 1234" title="Insert your IC Number">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip" style="display:none"><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip" id="error-mobile"></div>
                                     <label>Mobile Number</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="*****">
+                                        <input type="text" placeholder="+60168987987" name="Mobile Number" data-validation="number" data-validation-error-msg="May I have your mobile number?" data-validation-error-msg-container="#error-mobile" data-validation-help="+60123456789" title="May I have your mobile number?">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip" ><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip" id="error-address1"></div>
                                     <label>Address</label>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="Email">
+                                        <input type="text" placeholder="Address Line 1" name="Address1" data-validation="letternumeric" data-validation-error-msg="Not an address" data-validation-error-msg-container="#error-address1" title="Address line 1">
                                     </div>
                                     <div class="form">
-                                        <input type="text" class="defaultHolder" title="Email">
+                                        <input type="text" placeholder="Optional address line 2" name="Address2" title="Address line 2">
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="formErrorToolTip"><small>Invalid account</small></div>
+                                    <div class="formErrorToolTip"></div>
                                     <label>Gender</label>
                                     <div class="form">
                                         <select>
@@ -220,21 +221,47 @@
                                 </li>
                             </ul>
                             <div class="clear"></div>
+                            
                         </div>
                         <div class="formDetailsCta">
                             <a href="javascript:;"><span class="tria"></span> Fill in full details for extra points <span class="tria"></span></a>
                         </div>
                         <div class="formSubmission">
                             <label>
-                                <input type="checkbox">
+                                <input type="checkbox" data-validation="required" data-validation-error-msg=" (You have to agree to continue)">
                                 <span>I have read and agreed to the
                                     <a href="##">Terms & Conditions</a>
                                 </span>
                             </label>
                         </div>
                         <div class="registerCta">
-                            <button class="btnMainS" onclick="window.location.href='dashboard.html'">REGISTER</button>
+                            <button class="btnMainS" value="Validate">REGISTER</button>
                         </div>
+                        </form>
+
+                        <script src="lib/jquery.form-validator.min.js"></script>
+                        <script>
+                              $.validate({
+                                    form: '#registration-form',
+                                    modules : 'security',
+                                    onModulesLoaded : function() {
+                                        var optionalConfig = {
+                                          bad : 'Very bad',
+                                          weak : 'Weak',
+                                          good : 'Good',
+                                          strong : 'Strong'
+                                        };
+                                    $('input[name="pass"]').displayPasswordStrength(optionalConfig);
+                                    },
+                                    onError : function($form) {
+                                      trace('Validation of form '+$form.attr('id')+' failed!');
+                                    },
+                                    onSuccess : function($form) {
+                                      trace('The form '+$form.attr('id')+' is valid!');
+                                      return false; // Will stop the submission of the form
+                                    },
+                              });
+                        </script>
                     </div>
                 </div>
             </section>
