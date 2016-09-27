@@ -1320,123 +1320,134 @@ nav {
 	@includef positionIndex(relative);
 	display: block;
 }
-.pdInner {
+	.pdInner {
 	text-align: center;
-	.pdInnerImg {
-		@include positionIndex(relative);
-		display: block;
-		@include border-radius(3px);
-		background: $userNavColor;
-		.pdInnerLarge {
+		.pdInnerImg {
 			@include positionIndex(relative);
-			border: 1px solid $boderOutline;
-			img {
-				width: 100%;
-				height:  auto;
-			}
-		}
-		.pdInnerThumb {
-			@include positionIndex(relative);
-			width: 100.6%;
-			ul {
-				@extend .ulReset;
-				text-align: center;
-				li {
-					display: inline-block;
-					width: 24%;
-					border: 1px solid transparent;
-					img {
-						width: 100%;
-						height:  auto;
-						display: block;
-					}
+			display: block;
+			@include border-radius(3px);
+			background: $userNavColor;
+			.pdInnerLarge {
+				@include positionIndex(relative);
+				border: 1px solid $boderOutline;
+				img {
+					width: 100%;
+					height:  auto;
 				}
-				li:hover {border: 1px solid $shoutOutColor;}
+			}
+			.pdInnerThumb {
+				@include positionIndex(relative);
+				width: 100.6%;
+				ul {
+					@extend .ulReset;
+					text-align: center;
+					li {
+						display: inline-block;
+						width: 24%;
+						border: 1px solid transparent;
+						img {
+							width: 100%;
+							height:  auto;
+							display: block;
+						}
+					}
+					li:hover {border: 1px solid $shoutOutColor;}
 			}
 		}
 	}
 	
-}
-.wrapperPdInnerInfo {
-	@include positionIndex(relative);
-	display: block;
+		}
+	.wrapperPdInnerInfo {
+		@include positionIndex(relative);
+		display: block;
 	text-align:left;
 }
-.pdInnerInfo {
-	width: 920px/960px *100%;			
-	.pdInnerInfoDate{
-		font-family: 'arqL';
-		.actualClosingDate{
-			@include positionIndex(relative);
-			display: inline-block;
-			
-			span.ac { @include fontSizeHeight(0.778em,$dLineHeight); display: block;}
-			span.acDate { @include fontSizeHeight(1em,$dLineHeight); display:inline;}
-			span.acYear { @include fontSizeHeight(0.778em,$dLineHeight); display: inline;}
-		}
-		.infoDateDivider{
-			@include positionIndex(relative);
-			display: inline-block;
-			width: 1px;
-			height: 30px;
-			margin: 0 10px;
-			background: $dColor;
-		}
-		.infoDatePercent {
-			@include positionIndex(relative);
-			display: inline-block;
-			@include fontSizeHeight(2.444em, $dLineHeight);
-		}
-	}
-	.pdInnerShare{
-		@include positionIndex(absolute,3);
-		display: block;
+		.pdInnerInfo {
+			width: 920px/960px *100%;			
+			.pdInnerInfoDate{
+				font-family: 'arqL';
+				.actualClosingDate{
+					@include positionIndex(relative);
+					display: inline-block;
+					
+					span.ac { @include fontSizeHeight(0.778em,$dLineHeight); display: block;}
+					span.acDate { @include fontSizeHeight(1em,$dLineHeight); display:inline;}
+					span.acYear { @include fontSizeHeight(0.778em,$dLineHeight); display: inline;}
+				}
+				.infoDateDivider{
+					@include positionIndex(relative);
+					display: inline-block;
+					width: 1px;
+					height: 30px;
+					margin: 0 10px;
+					background: $dColor;
+				}
+				.infoDatePercent {
+					@include positionIndex(relative);
+					display: inline-block;
+					@include fontSizeHeight(2.444em, $dLineHeight);
+				}
+			}
+			.pdInnerShare{
+				@include positionIndex(absolute,3);
+				display: block;
 		top: 0;
-		right: 0;
-	}
-	.pdInnerTitle{
-		@include positionIndex(relative);
-		h2 { padding: 0;}
-	}
-	.pdInnerSubTitle{}
-	.pdInnerPrice{
-		@include positionIndex(relative);
-		color: $sndColor;
-		@include fontSizeHeight(1.556em, $dLineHeight);
-	}
-	.pdInnerSummary{
-		p { @include fontSizeHeight(1.111em,$dLineHeight);}
-	}
+				right: 0;
+			}
+			.pdInnerTitle{
+				@include positionIndex(relative);
+				h2 { padding: 0;}
+			}
+			.pdInnerSubTitle{}
+			.pdInnerPrice{
+				@include positionIndex(relative);
+				color: $sndColor;
+				@include fontSizeHeight(1.556em, $dLineHeight);
+			}
+			.pdInnerSummary{
+				p { @include fontSizeHeight(1.111em,$dLineHeight); }
+			}
 }
 .pdInnerInfo {
-	.pdInnerCtaContainer {
-		display: block;
+			.pdInnerCtaContainer{
+				display: block;
 	}
 } /* set for mobile */
 .pdInnerCtaContainer{
 	@include positionIndex(relative);
 	display: none;
 	padding: 40px 0 0 0;
-	.btnAddToBucket{
-		@include positionIndex(relative);
-		display: inline-block;
-		margin: 0 5px 0 0;
-		vertical-align: top;
-		button.btnBlueBorder{
-			img {
-				@include positionIndex (absolute);
-				right: 10px;
-				top: 5px;
-				height: 65%;
-				width: auto;
+		.btnAddToBucket{
+			@include positionIndex(relative);
+			display: inline-block;
+			margin: 0 5px 0 0;
+			vertical-align: top;
+			button.btnBlueBorder{
+				img {
+					@include positionIndex (absolute);
+					right: 10px;
+					top: 5px;
+					height: 65%;
+					width: auto;
+				}
 			}
 		}
+		.btnScoopIt{
+			@include positionIndex(relative);
+			display: inline-block;
+			vertical-align: top;
+			button.btnMainCta{}
+		}
+		.btnGoldCoin{
+			@include positionIndex(relative);
+			display: inline-block;
+		}
 	}
-	.btnScoopIt{
-		@include positionIndex(relative);
-		display: inline-block;
-		vertical-align: top;
-		button.btnMainCta{}
+.pdInnerShare {
+	a {
+		@include fontSizeHeight(1.5em, $dLineHeight);
+		display: block;
+		text-decoration: none;
 	}
 }
 
@@ -4207,6 +4218,8 @@ button.btnBlankBorder.active {}
 @media (max-width:412px){
 	.btnMobMenu { top: 3px;}
 	.btnUserMenu { top: 8px}
+	button.btnBlueBorder {
+		padding: 6px 30px 6px 5px;} 
 }
 @media (max-width: 375px) {
 	.userMainDbCard {
@@ -4298,7 +4311,8 @@ button.btnBlankBorder.active {}
 		height: 50px;
 	}
 	.silverCoin { background-position: 0 -50px;}
-
+	
+	
 	
 	/* footer */
 	.sitemap {

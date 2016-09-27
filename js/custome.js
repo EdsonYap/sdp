@@ -34,6 +34,8 @@ function init(){
 	registerDetails();
 	topUpMethodScroll();
 
+	productInnerThumb();
+
 	faqAccordion();
 	defaultPlaceHolder();
 
@@ -383,6 +385,24 @@ function mainWindowSize () {
 			TweenMax.to(hamburgerLineD,0,{rotation: 0});
 			}
 };
+
+function productInnerThumb(){
+	var btnPdInnerThumb = $('a.btnPdInnerThumb')
+		pdInnerLarge = $('.pdInnerLarge');
+
+	btnPdInnerThumb.each(function(){
+		$(this).click(function(){
+			var currentThumb = $(this).find('img').attr('src');
+			var checkThis = currentThumb.replace('products','products/large');
+
+			trace(checkThis);
+
+			pdInnerLarge.find('img').attr('src',currentThumb);
+			btnPdInnerThumb.parent('li').removeClass('selected');
+			$(this).parent('li').toggleClass('selected');
+		})
+	})
+}
 
 // default placeholder
 function defaultPlaceHolder(){

@@ -1421,6 +1421,16 @@ nav {
     z-index: 2;
     display: inline-block;
     vertical-align: top; }
+  .pdInnerCtaContainer .btnGoldCoin {
+    position: relative;
+    z-index: 2;
+    display: inline-block; }
+
+.pdInnerShare a {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  display: block;
+  text-decoration: none; }
 
 .wrapperPdInnerDetails {
   position: relative;
@@ -4420,7 +4430,10 @@ button.btnBlankBorder:hover {
     top: 3px; }
 
   .btnUserMenu {
-    top: 8px; } }
+    top: 8px; }
+
+  button.btnBlueBorder {
+    padding: 6px 30px 6px 5px; } }
 @media (max-width: 375px) {
   .userMainDbCard {
     min-height: 100px; }
