@@ -59,7 +59,7 @@ $(document).ready(function() {
           } else {
               desktopSliderInsert();              
           }
-          slider.reloadSlider();
+          //slider.reloadSlider();
       }, 500);
   });
   // layout fix
