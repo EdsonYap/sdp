@@ -30,6 +30,8 @@ function init(){
 	initScroll();
 	mainWindowSize();
 
+	topUpMethodWidth();
+
 	orderedToggle();
 	registerDetails();
 	topUpMethodScroll();
@@ -259,6 +261,24 @@ function topUpMethodScroll(){
     	}
     }
 
+}
+
+function topUpMethodWidth(){
+	var reloadMethod = $('.reloadMethod');
+	var reloadLength = reloadMethod.find('ul li').length;
+
+	var reloadMethodWidth = $.map(reloadMethod.find('ul li'),function(val){
+            return $(val).width()+20;
+    });
+    var totalReloadWidth = 0;
+    for (var i = 0; i < reloadMethodWidth.length; i++){
+        totalReloadWidth += reloadMethodWidth[i] <<0;
+    }
+
+    $('.reloadMethod ul').innerWidth(totalReloadWidth);
+
+    $('.reloadMethodLine').width(totalReloadWidth);
+	//trace(findWidth)
 }
 
 function faqAccordion(){

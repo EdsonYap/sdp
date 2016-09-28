@@ -2477,6 +2477,9 @@ a:hover span.tria{
 .reloadAmount, .reloadDetails {
 	@include positionIndex(relative);
 	margin: 20px 0 0 0;
+	.form {
+		width: 99.5%;
+	}
 }
 .reloadPoints {
 	@include positionIndex(relative);
@@ -3854,6 +3857,14 @@ button.btnBlankBorder.active {}
 		padding: 9px 25px 11px;
 		margin: 0 0 -3px 0;
 	}
+
+	/* reload */
+	.reloadMethod {
+		overflow-x: scroll;
+		width: 102%;
+		ul {} 
+	}
+
 	/* about */
 	.wrapperWhatIsSdp {
 		padding: 50px 0;

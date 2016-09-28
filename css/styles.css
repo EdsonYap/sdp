@@ -2520,6 +2520,8 @@ a:hover span.tria {
   position: relative;
   z-index: 2;
   margin: 20px 0 0 0; }
+  .reloadAmount .form, .reloadDetails .form {
+    width: 99.5%; }
 
 .reloadPoints {
   position: relative;
@@ -4009,6 +4011,11 @@ button.btnBlankBorder:hover {
   .dbCardCta button.btnBlueSBorder {
     padding: 9px 25px 11px;
     margin: 0 0 -3px 0; }
+
+  /* reload */
+  .reloadMethod {
+    overflow-x: scroll;
+    width: 102%; }
 
   /* about */
   .wrapperWhatIsSdp {
